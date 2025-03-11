@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block tittle %}Аккаунты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Аккаунты</h1>
+        {% if accounts %}
+            {% for el in accs %}
+                <div class="alert alert-warning">
+
+                    <h3> {{ el.login }}</h3>
+                    <h3> {{ el.password }}</h3>
+                    <h3> {{ el.secret_key }}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> У вас нет аккаунтов</p>
+        {% endif %}
+    </div>
+{% endblock %}

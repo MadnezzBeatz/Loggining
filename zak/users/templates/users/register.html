@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% block tittle %}Sign Up{% endblock %}
+{% block content %}
+<div class="features">
+    <form method="post" novalidate>
+        <h1>Sign Up</h1>
+        {% csrf_token %}
+        {% for field in form %}
+            {% if field.errors %}
+                <ui class="errorlist">
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ui>
+            {% endif %}
+            {{ field }}<br>
+        {% endfor %}
+        <input type="submit" value="Register" />
+</form>
+</div>
+
+{% endblock content %}

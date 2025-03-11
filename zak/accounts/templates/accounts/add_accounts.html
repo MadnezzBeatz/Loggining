@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block tittle %}Добавить{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Добавить аккаунты в базу</h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            {{ form.login }}<br>
+            {{ form.password }}<br>
+            {{ form.secret_key }}<br>
+            {{ form.status }}<br>
+            {{ form.gameid }}<br>
+            <span><< error >></span>
+
+
+            <button class="btn btn-success" type="submit">Добавить аккаунт</button>
+        </form>
+    </div>
+{% endblock %}
